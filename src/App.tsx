@@ -66,6 +66,7 @@ const App: React.FC = () =>  {
             />
             <Route path='/cart' 
             element={<Cart products={products} 
+            setShoppingCart={setShoppingCart}
             shoppingCart={shoppingCart}/>}
             />
           </Routes>
@@ -78,6 +79,7 @@ export interface Props {
   products ?: any, 
   shoppingCart ?: any, 
   addToCart ?: any,
+  setShoppingCart ?: any
 }
 
 export default App
