@@ -12,7 +12,16 @@ export default createGlobalStyle`
         background: ${ props => props.theme.colors.background};
         color: ${props => props.theme.colors.text}; 
         margin: 0;
-        font-family: 'Noto Sans', sans-serif;       
+        font-family: 'Noto Sans', sans-serif;  
+        justify-content: center;
+        align-items: center; 
     }
-
+    .App{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        min-height: 100vh;
+    }
+    main{margin: 7rem 0 0;}
 `
