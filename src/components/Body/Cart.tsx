@@ -2,7 +2,6 @@ import { Props } from '../../App'
 import { CartDiv, CartItem, CartButton } from '../styles/components/cart'
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect } from 'react'
 const plus = <FontAwesomeIcon icon={faPlus} />
 const minus = <FontAwesomeIcon icon={faMinus} />
 
@@ -17,7 +16,7 @@ const Cart:React.FC<Props> = ({shoppingCart, setShoppingCart}) => {
         }
         setShoppingCart(oldCart)
     }
-    useEffect(()=>console.log(shoppingCart), [shoppingCart])
+    // useEffect(()=>console.log(shoppingCart), [shoppingCart])
     const removeOneItem = (e:any) => {
         const id =(e.target.nodeName === 'path') ? e.target.parentElement.parentElement.dataset.id : e.target.parentElement.dataset.id
         let oldCart = JSON.parse(JSON.stringify(shoppingCart))

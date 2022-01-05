@@ -4,7 +4,7 @@ export const CartDiv = styled.main`
     display: flex;
     flex-direction: column;
     align-items:center;
-    min-height: 7rem;
+    min-height: calc(100vh - 5rem);
     justify-content:space-evenly;
     width: 60%; height: auto;
     padding: 1rem 0 0;

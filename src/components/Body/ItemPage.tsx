@@ -19,16 +19,16 @@ const ItemPage:React.FC<Props> = ({ products, addToCart, shoppingCart }) => {
     }
   
     return(
-    <ItemIndividual data-id={item.id}>
+    <ItemIndividual >
         <figure>
             <img alt={item.id + ' image'} src={`${item.img}`}/>
             <figcaption>{item.id}<br/>
             ${item.price}<br/>
             </figcaption>
         </figure>
-        <div>
+        <div data-id={item.id}>
             Description: {item.description}<br/>
-            <button onClick={addToCart}>{cart}ADD TO CART</button>
+            <button data-id={item.id} onClick={addToCart}>{cart}ADD TO CART</button>
         </div>
     </ItemIndividual>      
     )

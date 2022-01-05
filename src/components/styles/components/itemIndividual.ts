@@ -11,7 +11,8 @@ export const ItemIndividual = styled.div`
     border-radius: 15px;
     color: ${props => `${props.theme.colors.text}dd`};
     background: ${props => `${props.theme.colors.secondary}55`};
-    img{ height:17rem; width: 19rem; border-radius: 15px;margin: 0 1rem;}
+    @media(max-width:645px){flex-direction:column;width:90%;height:auto;}
+    img{ height:17rem; width: 19rem; border-radius: 15px;margin: 0 1rem; }
     figcaption{
         display: flex;
         font-weight: bold;

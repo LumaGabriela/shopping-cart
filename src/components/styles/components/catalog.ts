@@ -7,7 +7,7 @@ export const Catalog = styled.main`
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 16rem);
-    grid-template-rows: max-content;
+    grid-template-rows: 16rem;
     padding: 0%;
     background: transparent;
     

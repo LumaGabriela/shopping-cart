@@ -59,7 +59,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme} >
       <div className='App'>
         <Global />        
-        <Router>
+        <Router basename='/shopping-cart'>
           <Header 
           shoppingCart={shoppingCart} 
           toggleTheme={toggleTheme}
@@ -92,7 +92,7 @@ export interface Props {
   products ?: any, 
   shoppingCart ?: any, 
   addToCart ?: any,
-  setShoppingCart ?: any
+  setShoppingCart ?: any,
   match?: any
 }
 
