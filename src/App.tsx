@@ -25,7 +25,7 @@ const App: React.FC = () => {
   const addToCart = (e:any) => {
     let id =(e.target.nodeName === 'path') ? e.target.parentElement.parentElement.dataset.id : e.target.parentElement.dataset.id
     let cart = JSON.parse(JSON.stringify(shoppingCart))
-    let item = products.find((item: { id: any }) => item.id === id)
+    let item = products.find((item: { id: string }) => item.id === id)
     if(cart.find((obj:{item : any}) => obj.item.id === id)){
       let currentItem = cart.find((obj:{item : any}) => obj.item.id === id)
       currentItem.quantity = currentItem.quantity + 1
@@ -35,7 +35,11 @@ const App: React.FC = () => {
     }
     setShoppingCart(cart)
   }
-  const [products] = useState<any>( [
+  interface Item{
+    id:string, price: string, key: string, img: string, description: string
+  }
+  type Items = Item[]
+  const [products] = useState<Items>( [
     {id: 'Notebook', price: '8', key: uuidv4(), img: notebook, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet, diam eget sollicitudin tempor, tellus urna ultrices erat, quis commodo justo nunc in tortor. Etiam imperdiet nibh id libero dignissim, eget placerat tortor vulputate. Nulla consectetur eleifend sem, ac placerat magna rhoncus sit amet. Duis nisl lorem, molestie sit amet nulla nec, mollis posuere dui.'},
     
     {id: 'Sketchbook', price: '5', key: uuidv4(), img: notebook1, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet, diam eget sollicitudin tempor, tellus urna ultrices erat, quis commodo justo nunc in tortor. Etiam imperdiet nibh id libero dignissim, eget placerat tortor vulputate. Nulla consectetur eleifend sem, ac placerat magna rhoncus sit amet. Duis nisl lorem, molestie sit amet nulla nec, mollis posuere dui.'},
@@ -92,8 +96,7 @@ export interface Props {
   products ?: any, 
   shoppingCart ?: any, 
   addToCart ?: any,
-  setShoppingCart ?: any,
-  match?: any
+  setShoppingCart ?: any
 }
 
 export default App
